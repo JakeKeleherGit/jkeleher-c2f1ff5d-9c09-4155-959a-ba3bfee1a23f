@@ -1,0 +1,224 @@
+:root {
+  --bg: #0b1220;
+  --panel: #121a2a;
+  --border: #1e2a44;
+  --text: #e9eef7;
+  --muted: #9fb0ce;
+  --accent: #2f6bff;
+  --accent-2: #22c55e;
+  --danger: #ef4444;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(1200px 800px at 50% -20%, #18233a 0%, var(--bg) 60%) no-repeat, var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* Center EVERYTHING */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* horizontal centering */
+  justify-content: center;  /* vertical centering */
+  padding: 20px;
+  text-align: center;
+}
+
+/* ==== Logo section ==== */
+.logo-wrap {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 48px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #7aa2ff, #66f1b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(122, 162, 255, 0.3);
+}
+
+.tagline {
+  display: block;
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ==== Card container ==== */
+.center-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  width: min(900px, 95vw);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 22px 22px;
+  text-align: left;
+}
+
+/* ==== Buttons ==== */
+.btn {
+  border: 1px solid var(--border);
+  background: #0e1730;
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  background: #142042;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: transparent;
+  color: white;
+}
+
+.btn-success {
+  background: var(--accent-2);
+  border-color: transparent;
+  color: #041312;
+}
+
+.btn-danger {
+  background: var(--danger);
+  border-color: transparent;
+  color: white;
+}
+
+/* ==== Inputs and form elements ==== */
+input,
+select {
+  background: #0c1426;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.25);
+}
+
+/* ==== List styles ==== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
+  border-radius: 12px;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ==== Utility classes ==== */
+.mt-2 {
+  margin-top: 12px;
+}
+
+.error {
+  color: #ff9f9f;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #0c1730;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ==== Task Header Layout ==== */
+.tasks-header {
+  display: flex;
+  justify-content: space-between; /* puts Logout on far right */
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tasks-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Smaller UI touches */
+.role-badge {
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: #0c1730;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.audit-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.audit-link:hover {
+  text-decoration: none;
+}
+
+.btn-logout {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #ff5757;
+}

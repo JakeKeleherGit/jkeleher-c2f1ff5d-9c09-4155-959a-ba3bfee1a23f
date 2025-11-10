@@ -1,0 +1,44 @@
+{
+  "name": "dashboard",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dashboard/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/dashboard",
+        "browser": "apps/dashboard/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/dashboard/tsconfig.app.json",
+        "assets": [
+          { "glob": "**/*", "input": "apps/dashboard/public", "output": "/" }
+        ],
+        "styles": ["apps/dashboard/src/styles.css"]
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "options": {
+        "buildTarget": "dashboard:build:development"
+      },
+      "configurations": {
+        "production": { "buildTarget": "dashboard:build:production" },
+        "development": { "buildTarget": "dashboard:build:development" }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}

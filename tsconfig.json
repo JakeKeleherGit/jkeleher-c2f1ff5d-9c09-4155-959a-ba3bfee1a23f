@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",                          // add this
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": false,
+    "target": "es2022",
+    "module": "preserve",
+    "lib": ["es2020", "dom"],
+    "paths": {
+      "@turbovets21/data": ["libs/data/src/index.ts","auth/src/index.ts"],   
+      "@turbovets21/auth": ["libs/auth/src/index.ts","data/src/index/ts"], 
+      "@turbovets21/auth/*": ["libs/auth/src/*"],
+      "@turbovets21/data/*": ["libs/data/src/*"]
+
+    },
+    "isolatedModules": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.spec.json" }
+  ],
+  "compileOnSave": false,
+  "exclude": ["node_modules", "tmp"]
+}
