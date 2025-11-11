@@ -50,6 +50,7 @@ libs/
 ```bash
 npm install
 ```
+**when installing npm, if you get prompted a y/n, click y
 
 ### 2️⃣ Run backend
 
