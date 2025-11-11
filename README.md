@@ -46,11 +46,49 @@ libs/
 ## ⚙️ Setup & Running
 
 ### 1️⃣ Install dependencies
+⚙️ 1. Ensure You Are in the Project Directory
+
+Before running any commands, make sure you are in the root directory of the project — the one that contains the package.json file.
+- cd jkeleher-c2f1ff5d-9c09-4155-959a-ba3bfee1a23f
+
+To verify, run:
+ls
+
+You should see files like package.json, nx.json, and folders such as apps/ and libs/.
+
+🟢 2. Ensure Node.js (and npm) Are Installed
+Check if Node.js and npm are installed by running:
+
+node -v
+npm -v
+
+
+If either command returns “command not found,” install Node.js using Homebrew
+ or the official Node.js website
+:
+
+With Homebrew:
+brew install node
+
+Once installed, verify:
+node -v
+npm -v
+
+🧩 3. Install Nx (if not already installed)
+If you see an error like Unknown command: "nx", install Nx globally:
+npm install -g nx
+
+
+You can verify Nx installation with:
+nx --version
+
+🚀 4. Install Dependencies
+After confirming Node and Nx are working, install the project dependencies:
 
 ```bash
 npm install
 ```
-**when installing npm, if you get prompted a y/n, click y
+*when installing npm, if you get prompted a y/n, click y*
 
 ### 2️⃣ Run backend
 
